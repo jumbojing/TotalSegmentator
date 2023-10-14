@@ -96,7 +96,7 @@ def totalsegmentator(input, output, ml=False, nr_thr_resamp=1, nr_thr_saving=6,
         folds = [0]
     elif task == "lung_vessels":
         task_id = 294
-        resample = 1.0
+        resample = None
         trainer = "nnUNetTrainerNoMirroring"
         crop = ["spinal_cord"]
         # if ml: raise ValueError("task lung_vessels does not work with option --ml, because of postprocessing.")
