@@ -88,17 +88,17 @@ def totalsegmentator(input, output, ml=False, nr_thr_resamp=1, nr_thr_saving=6,
             if not quiet: print("Using 'fast' option: resampling to lower resolution (3mm)")
         else:
             task_id = 292
-            # task_id = [291, 292, 293, 294, 295]
             resample = 1.0
             trainer = "nnUNetTrainerNoMirroring"
             crop = None
         model = "3d_fullres"
         folds = [0]
     elif task == "lung_vessels":
-        task_id = 294
+        task_id = 258
         resample = None
-        trainer = "nnUNetTrainerNoMirroring"
-        crop = ["spinal_cord"]
+        trainer = "nnUNetTrainer"
+        crop = ["lung_upper_lobe_left", "lung_lower_lobe_left", "lung_upper_lobe_right",
+                "lung_middle_lobe_right", "lung_lower_lobe_right"]
         # if ml: raise ValueError("task lung_vessels does not work with option --ml, because of postprocessing.")
         if fast: raise ValueError("task lung_vessels does not work with option --fast")
         model = "3d_fullres"
