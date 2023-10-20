@@ -176,7 +176,7 @@ def totalsegmentator(input, output, ml=False, nr_thr_resamp=1, nr_thr_saving=6,
         if fast: raise ValueError("task liver_vessels does not work with option --fast")
     elif task == "vertebrae_body":
         task_id = 302
-        resample = 1.5
+        resample = 1.0
         trainer = "nnUNetTrainer"
         crop = None
         model = "3d_fullres"
